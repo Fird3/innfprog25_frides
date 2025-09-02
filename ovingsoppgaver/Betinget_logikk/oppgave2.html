@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Betinget logikk</title>
+    <title>Oppgave 2</title>
 </head>
 <body>
+
     <p id="utskrift"></p>
     <script>
-        const first_name = "Fride"
+        const age = "63"
         let = utskrift
 
-        if (first_name === "Fride") {
-            utskrift = "Jeg heter " + first_name + " Standal"
+        if (age < 18){
+            utskrift = "Du er ikke myndig"
+        } else if ( age >= 18 && age <= 62) {
+            utskrift = "Du er myndig og klar til studie!"
         } else {
-            utskrift = "Jeg heter ikke " + first_name + " Standal"
+            utskrift = "Du er pensjonsklar!"
         }
-        
+
         document.getElementById("utskrift").innerHTML = utskrift
+
     </script>
+    
 </body>
 </html>
