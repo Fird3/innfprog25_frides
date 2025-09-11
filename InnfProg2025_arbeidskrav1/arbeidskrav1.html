@@ -35,7 +35,10 @@
         </p>
     </footer>
 
-    <scripttt>
+    
+    <script>
+        //script var skrevet med 3 t-er istedenfor bare 1
+
         //Variabel with company name
         const company = "Programmeriet"
 
@@ -47,7 +50,10 @@
         ]
 
         //Secret keys to access url and images
-        let images_folder = "img
+
+            // var skrevet som "img, uten fnutter på slutten. Skrev det om til "img"
+            //tatt vekk den ene fnutten som sto foran img
+        let images_folder = img
         let secret_key = 0
         let ak_key
         
@@ -58,8 +64,10 @@
         if(safeguard === true) {
             ak_key = secret_key + 1
         }
+
         const safe_images_folder = images_folder += ak_key
-        console.logg("Image folder: " + safe_images_folder)
+        console.log("Image folder: " + safe_images_folder)
+            //var skrevet som console.logg med 2 g-er på sluttet, fjernet ene så der nå står console.log
 
         let HTML_employees = ""
 
@@ -72,7 +80,8 @@
                     <p>${e.email}</p>
                 </article>`)
 
-                document.getElementbyId("employee_list").innerHTML = HTML_employeeees
+                document.getElementbyId("employee_list").innerHTML = HTML_employees
+                //HTML-employeeees med 4 e-er, byttet om til HTML-employees med bare 2-er
         }
 
         //System prints
