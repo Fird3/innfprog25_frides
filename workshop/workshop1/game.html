@@ -75,6 +75,11 @@
     </main>
     <script>
         //PREPARE GAME CONFIG AND VARIABLES
+
+
+        for(let teller = 0; teller<=10; teller++){
+            console.log(teller)
+        }
         //TODO: config
         const gameConfig = {
             playerName: "Fride",
@@ -96,12 +101,21 @@
         }
 
         console.log(notebook)
-        
 
+        //(BONUS) TODO: function for all prints
+
+        function updateStaicUI(){
         //TODO: print playerinfo to HTML
 
         if(gameConfig.playerName === "") {
             document.getElementById("playerName").innerHTML = "Waiting on player..."
+            for(key in gameConfig){
+                key === playerName ? playerName : gameConfig[key] = 0
+            }
+
+            for(key in notebook){
+                notebook[key] = 0
+            }
         } else {
             document.getElementById("playerName").innerHTML = gameConfig.playerName
         }
@@ -116,9 +130,9 @@
         document.getElementById("arrays").innerHTML = notebook.arrays
         document.getElementById("loops").innerHTML = notebook.loops
         document.getElementById("functions").innerHTML = notebook.functions
+        }
 
-        //(BONUS) TODO: function for all prints
-        
+        updateStatsicUI()
     </script>
 </body>
 </html>
