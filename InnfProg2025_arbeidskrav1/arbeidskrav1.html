@@ -57,13 +57,14 @@
         //Secret keys to access url and images
 
             // var skrevet som "img, uten fnutter på slutten. Skrev det om til "img"
-            //tatt vekk den ene fnutten som sto foran img
         let images_folder = "img"
         let secret_key = 0
         let ak_key
         
         //Turn on or off safeguard to allow system to run
-        const safeguard = false
+
+        // const safeguard sto på false, så for å få alt til å fungere skrudde jeg denne på true
+        const safeguard = true
         
         //Control of safeguard to create image folder name
         if(safeguard === true) {
@@ -86,11 +87,13 @@
                     <p>${e.email}</p>
                 </article>`)
 
-                document.getElementbyId("employee_list").innerHTML = HTML_employees
+                document.getElementById("employee_list").innerHTML = HTML_employees
                 //HTML-employeeees med 4 e-er, byttet om til HTML-employees med bare 2-er
         }
 
         //System prints
+
+        //getElementById var skreve med en liten b i By, byttet dette ut med en stor B
         document.getElementById("companyname").innerHTML = company
     </script>
 </body>
