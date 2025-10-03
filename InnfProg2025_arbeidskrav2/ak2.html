@@ -16,7 +16,7 @@
     <p>Finnes ordet "problemløsning" i Programmeringsord-arrayen? <span id="problemlosning_sjekk"></span></p>
     <h2>Problem 3</h2>
     <p>Gjennomsnittet av tallene i tall_array_en er <span id="avg_array_one"></span></p>
-    <p>Gjennomsnittet av tallene i tall_array_to er <span id="avg_array_one"></span></p>
+    <p>Gjennomsnittet av tallene i tall_array_to er <span id="avg_array_two"></span></p>
 
     <script>
         //PROBLEM 1
@@ -25,6 +25,8 @@
         let random_color_code = "#"
         
         //Din kode for å løse problem 1 her.
+
+        
 
         //PROBLEM 2
         const programming_words = ["variabel","funksjon","array","objekt","loop","betingelse","klasse","rekursjon","algoritme","kompilator"]
@@ -36,6 +38,14 @@
         const tall_array_to = [23, 76, 88, 13, 56, 90, 42]
 
         //Din kode for å løse problem 3 her.
+
+        const avg_array_one = (tall_array_en[0] + tall_array_en[1] + tall_array_en[2] + tall_array_en[3] + tall_array_en[4] + tall_array_en[5] + tall_array_en[6] + tall_array_en[7] + tall_array_en[8]) / 9
+
+        document.getElementById("avg_array_one").innerHTML = avg_array_one
+
+        const avg_array_two = (tall_array_to[0] + tall_array_to[1] + tall_array_to[2] + tall_array_to[3] + tall_array_to[4] + tall_array_to[5] + tall_array_to[6]) / 7
+
+        document.getElementById("avg_array_two").innerHTML = avg_array_two
     </script>
 </body>
 </html>
