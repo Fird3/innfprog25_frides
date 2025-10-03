@@ -24,14 +24,34 @@
         const hexadecimal_characters_array = Array.from(hexadecimal_characters)
         let random_color_code = "#"
         
+
         //Din kode for å løse problem 1 her.
 
-        
+
 
         //PROBLEM 2
         const programming_words = ["variabel","funksjon","array","objekt","loop","betingelse","klasse","rekursjon","algoritme","kompilator"]
 
+
         //Din kode for å løse problem 2 her.
+
+
+        if(programming_words === "betingelse"){
+            betingelse_sjekk = "Ja"
+        } else {
+            betingelse_sjekk = "Nei"
+        }
+
+        document.getElementById("betingelse_sjekk").innerHTML = betingelse_sjekk
+
+        if(programming_words === "algoritme"){
+            algoritme_sjekk = "Ja"
+        } else {
+            algoritme_sjekk = "Nei"
+        }
+
+        document.getElementById("algoritme_sjekk").innerHTML = algoritme_sjekk
+
 
         //PROBLEM 3
         const tall_array_en = [9, 13, 5, 62, 11, 6, 28, 31, 17]
