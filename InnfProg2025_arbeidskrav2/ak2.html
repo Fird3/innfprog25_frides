@@ -23,6 +23,8 @@
         const hexadecimal_characters = "ABCDEF1234567890"
         const hexadecimal_characters_array = Array.from(hexadecimal_characters)
         let random_color_code = "#"
+
+
         
 
         //Din kode for å løse problem 1 her.
@@ -35,22 +37,15 @@
 
         //Din kode for å løse problem 2 her.
 
-
-        if(programming_words === "betingelse"){
+        const indexBetingelse = "betingelse"
+    
+        if(programming_words == indexBetingelse){
             betingelse_sjekk = "Ja"
         } else {
             betingelse_sjekk = "Nei"
         }
 
         document.getElementById("betingelse_sjekk").innerHTML = betingelse_sjekk
-
-        if(programming_words === "algoritme"){
-            algoritme_sjekk = "Ja"
-        } else {
-            algoritme_sjekk = "Nei"
-        }
-
-        document.getElementById("algoritme_sjekk").innerHTML = algoritme_sjekk
 
 
         //PROBLEM 3
