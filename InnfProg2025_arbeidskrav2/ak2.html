@@ -24,12 +24,12 @@
         const hexadecimal_characters_array = Array.from(hexadecimal_characters)
         let random_color_code = "#"
 
-        let random_color = hexadecimal_characters.random()
-
-
-        
-
         //Din kode for å løse problem 1 her.
+
+        let random_color = random_color_code + hexadecimal_characters
+
+        document.getElementById("random_color").innerHTML = random_color
+
 
 
 
@@ -39,15 +39,40 @@
 
         //Din kode for å løse problem 2 her.
 
-        const indexBetingelse = "betingelse"
-    
-        if(programming_words == indexBetingelse){
-            betingelse_sjekk = "Ja"
-        } else {
-            betingelse_sjekk = "Nei"
-        }
+        
 
-        document.getElementById("betingelse_sjekk").innerHTML = betingelse_sjekk
+        
+            if(programming_words.includes("betingelse")){
+                betingelse_sjekk = "Ja"
+            } else {
+                betingelse_sjekk = "Nei"
+            }
+
+            document.getElementById("betingelse_sjekk").innerHTML = betingelse_sjekk
+
+
+
+            if(programming_words.includes("algoritme")){
+                algoritme_sjekk = "Ja"
+            } else {
+                algoritme_sjekk = "Nei"
+            }
+
+            document.getElementById("algoritme_sjekk").innerHTML = algoritme_sjekk
+
+
+
+            if(programming_words.includes("problemløsning")){
+                problemlosning_sjekk = "Ja"
+            } else {
+                problemlosning_sjekk = "Nei"
+            }
+
+            document.getElementById("problemlosning_sjekk").innerHTML = problemlosning_sjekk
+
+
+        
+        
 
 
         //PROBLEM 3
