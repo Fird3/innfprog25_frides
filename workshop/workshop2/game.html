@@ -115,6 +115,50 @@
         }
 
         updateStaticUI()
+
+        function toggleVisibility(elementid){
+            console.log(elementid)
+            const elem = document.getElementById(elementid)
+            if(element.classList.includes("hidden")){
+                elem.style.display = "block"
+                elem.classList.remove = "hidden"
+            } else {
+                elem.style.display = "none"
+                elem.classList.add = "hidden"
+            }
+        }
+
+
+
+        document.addEventListener("keydown", function(event){
+            if(event.key === "n"){
+                toggleVisibility("notebook")
+            }
+            if(event.key === "i"){
+                toggleVisibility("info")
+            }
+        })
+
+
+        document.getElementById("notebookToggler").addEventListener( "click", function(){
+            toggleVisibility = ("notebook")
+        })
+
+        document.getElementById("infoToggler").addEventListener( "click", function(){
+            toggleVisibility = ("info")
+        })
+
+
+
+        function updateSingleStaticUI(elementid, value){
+            document.getElementById(elementid).innerHTML = value
+        }
+
+
+
+        function updateConfigValue(configType, value){
+            
+        }
     </script>
 </body>
 </html>
