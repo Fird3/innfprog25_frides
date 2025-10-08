@@ -26,8 +26,8 @@
         </section>
         <img src="icons/c3_logo.svg" alt="Code Concept Collector" />
         <nav>
-            <button id="notebookToggler"><img src="icons/notebook.svg" />Åpne kladdeboka <span class="shortcut">n</span></button>
-            <button id="infoToggler">Info / Hvordan spille <span class="shortcut">i</span></button>
+            <button  id="notebookToggler"><img src="icons/notebook.svg" />Åpne kladdeboka <span class="shortcut">n</span></button>
+            <button  id="infoToggler">Info / Hvordan spille <span class="shortcut">i</span></button>
         </nav>
     </header>
     <main>
@@ -77,7 +77,7 @@
         //PREPARE GAME CONFIG AND VARIABLES
         //TODO: config
         const gameConfig = {
-            playerName: "Jostein",
+            playerName: "Fride",
             energy: 10,
             points: 4000,
             duration: 30
@@ -114,51 +114,77 @@
             document.getElementById("arrays").innerHTML = notebook.arrays
         }
 
+
         updateStaticUI()
 
-        function toggleVisibility(elementid){
-            console.log(elementid)
-            const elem = document.getElementById(elementid)
-            if(element.classList.includes("hidden")){
-                elem.style.display = "block"
-                elem.classList.remove = "hidden"
-            } else {
-                elem.style.display = "none"
-                elem.classList.add = "hidden"
-            }
+        //oppgave 1
+
+       function toggleVisibility(elementid){
+        const elem = document.getElementById(elementid)
+        console.log(elem)
+        if(elem.classList.contains("hidden")){
+            elem.style.display = "block"
+            elem.classList.remove("hidden")
+        } else {
+            elem.style.display = "none"
+            elem.classList.add ("hidden")
         }
+       }
 
+       toggleVisibility("info")
 
-
-        document.addEventListener("keydown", function(event){
-            if(event.key === "n"){
-                toggleVisibility("notebook")
-            }
-            if(event.key === "i"){
-                toggleVisibility("info")
-            }
-        })
-
-
-        document.getElementById("notebookToggler").addEventListener( "click", function(){
-            toggleVisibility = ("notebook")
-        })
-
-        document.getElementById("infoToggler").addEventListener( "click", function(){
-            toggleVisibility = ("info")
-        })
-
-
-
-        function updateSingleStaticUI(elementid, value){
-            document.getElementById(elementid).innerHTML = value
+       //oppgave 2
+       document.addEventListener("keydown", (event) => {
+        if(event.code === "KeyN"){
+            toggleVisibility("notebook")
+        }else if (event.code === "KeyI"){
+            toggleVisibility("info")
         }
+       })
 
+       //oppgave 3
+       const infoTogglerBtn = document.getElementById("infoToggler")
 
+       infoTogglerBtn.addEventListener("click", () => {
+        toggleVisibility("info")
+       })
 
-        function updateConfigValue(configType, value){
-            
-        }
+       const notebookTogglerBtn = document.getElementById("notebookToggler")
+
+       notebookTogglerBtn.addEventListener("click", () => {
+        toggleVisibility("notebook")
+       })
+
+       //oppgave 4
+       function updateSingleStaticUI(element, value){
+        console.log(element, value)
+        document.getElementById(element).innerHTML = value
+       }
+
+       updateSingleStaticUI("points", 10)
+       updateSingleStaticUI("energy", 60)
+
+       //oppgave 5
+       function updateConfigValue(configType, value){
+            console.log(configType)
+            obj === "notebook" ? notebook[configType] += value : gameConfig[configType] += value
+            //obj === "gameConfig" ? gameConfig[configType] += value : null
+
+            //configType === "variables" ? notebook.variables += value : null
+            //configType === "arrays" ? notebook.arrays += value : null
+            //configType === "loops" ? notebook.arrays += value : null
+            //configType === "functions" ? notebook.functions += value : null
+
+            //configType === "energy" ? gameConfig.energy += value : null
+            //configType === "points" ? gameConfig.points += value : null
+            //configType === "duration" ? gameConfig.duration += value : null
+
+            updateStaticUI()
+       }
+
+       updateConfigValue("notebook","variables", 10)
+       updateConfigValue("notebook", "arrays", 40)
+       updateConfigValue("gameConfig", "energy", 100)
     </script>
 </body>
 </html>
