@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Tilfeldig hexadesimal fargekode: <span id="random_color"></span></p>
+    <script>
+
+
+
+
+         const hexadecimal_characters = "ABCDEF1234567890"
+        const hexadecimal_characters_array = Array.from(hexadecimal_characters)
+        let random_color_code = "#"
+
+
+
+         function randomHex (){
+            return Math.floor(Math.random() * hexadecimal_characters.length).toString().toUpperCase().repeat(6)
+
+        }
+
+        console.log(randomHex())
+       // document.getElementById("random_color").innerHTML = random_color_code + hexadecimal_characters_array//[randomHex]
+        
+
+
+        //function randomHex(hexadecimal_characters_array, random_color){
+          //  let farge = ""
+
+            //const random = Math.floor(Math.random() * hexadecimal_characters_array.length)
+
+            //console.log(random)
+
+            //document.getElementById("random_color").innerHTML = random_color_code + hexadecimal_characters_array[random]
+        //}
+
+    </script>
+</body>
+</html>

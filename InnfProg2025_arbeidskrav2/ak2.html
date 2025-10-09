@@ -26,18 +26,38 @@
 
         //Din kode for å løse problem 1 her.
 
-
+        
         //let random_color = random_color_code + hexadecimal_characters.shuffle()
 
-        function randomhex(hexadecimal_characters){
-            
-            return math.random() * hexadecimal_characters;
 
-        }
+        //const random = Math.floor(Math.random() * hexadecimal_characters_array.length)
+        
+
+        
+        const random = Math.floor(Math.random() * hexadecimal_characters.length)
+
+        
+        const randomHex = 
+            
+            //console.log( a + hexadecimal_characters_array)
+            
+        document.getElementById("random_color").innerHTML = random_color_code + hexadecimal_characters[random]
+
+            
+        
+       
+            
+            
+        
+
+
+       
+
+
 
         
 
-        document.getElementById("random_color").innerHTML = random_color_code + randomhex(9)
+        //document.getElementById("random_color").innerHTML = random_color_code + randomhex
 
 
 
