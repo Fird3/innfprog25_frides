@@ -26,7 +26,29 @@
 
         //Din kode for å løse problem 1 her.
 
+        function randomHex(length){
+
+            let utskrift = ""
+            const random = Math.floor(Math.random() * hexadecimal_characters.length)
+
+            for (let hex = 0; hex < length; hex++ ){
+                utskrift += hexadecimal_characters.charAt((Math.random() * hexadecimal_characters.length))
+            }
+
+
+            document.getElementById("random_color").innerHTML = randomHex(5)
+
+
+
+           //console.log(randomhex(5))
+
+        }
+
         
+         //for( hex = 0; hex = 6; hex ++){
+           //     utskrift = random 
+            //}
+
         //let random_color = random_color_code + hexadecimal_characters.shuffle()
 
 
@@ -37,7 +59,7 @@
         const random = Math.floor(Math.random() * hexadecimal_characters.length)
 
         
-        const randomHex = 
+       
             
             //console.log( a + hexadecimal_characters_array)
             
