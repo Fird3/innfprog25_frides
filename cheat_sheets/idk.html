@@ -10,20 +10,46 @@
     <script>
 
 
+function randomHex (){
+          return Math.floor(Math.random() * hexadecimal_characters.length).toString().toUpperCase().repeat(6)
+}
+
+//var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+ //const hexadecimal_characters = "ABCDEF1234567890"
+   //     const hexadecimal_characters_array = Array.from(hexadecimal_characters)
+     //   let random_color_code = "#"
+
+       // function makeid(length) {
+    //let utskrift           = "";
+    
+    const hexLength = hexadecimal_characters.length;
+    for ( var hex = 0; hex < length; hex++ ) {
+        utskrift += hexadecimal_characters.charAt(Math.floor(Math.random() * hexLength));
+    }
+    return utskrift;
 
 
-         const hexadecimal_characters = "ABCDEF1234567890"
-        const hexadecimal_characters_array = Array.from(hexadecimal_characters)
-        let random_color_code = "#"
+//console.log(makeid(5));
+
+document.getElementById("random_color").innerHTML = random_color_code + makeid(6)
 
 
 
-         function randomHex (){
-            return Math.floor(Math.random() * hexadecimal_characters.length).toString().toUpperCase().repeat(6)
 
-        }
+        // const hexadecimal_characters = "ABCDEF1234567890"
+       // const hexadecimal_characters_array = Array.from(hexadecimal_characters)
+        //let random_color_code = "#"
 
-        console.log(randomHex())
+
+
+        // function randomHex (){
+        //    return Math.floor(Math.random() * hexadecimal_characters.length).toString().toUpperCase().repeat(6)
+
+        //}
+
+       // console.log(randomHex())
+
+
        // document.getElementById("random_color").innerHTML = random_color_code + hexadecimal_characters_array//[randomHex]
         
 
