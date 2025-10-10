@@ -29,20 +29,20 @@
         function randomHex(length){
 
             let utskrift = ""
-            const random = Math.floor(Math.random() * hexadecimal_characters.length)
+            const hexLength = hexadecimal_characters.length
 
             for (let hex = 0; hex < length; hex++ ){
-                utskrift += hexadecimal_characters.charAt((Math.random() * hexadecimal_characters.length))
+                utskrift += hexadecimal_characters.charAt((Math.random() * hexLength))
             }
 
-
-            document.getElementById("random_color").innerHTML = randomHex(5)
+            return utskrift
 
 
 
            //console.log(randomhex(5))
 
         }
+         document.getElementById("random_color").innerHTML = random_color_code + randomHex(6)
 
         
          //for( hex = 0; hex = 6; hex ++){
@@ -61,9 +61,9 @@
         
        
             
-            //console.log( a + hexadecimal_characters_array)
+            console.log( a + hexadecimal_characters_array)
             
-        document.getElementById("random_color").innerHTML = random_color_code + hexadecimal_characters[random]
+        //document.getElementById("random_color").innerHTML = random_color_code + hexadecimal_characters[random]
 
             
         

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>Tilfeldig hexadesimal fargekode: <span id="random_color"></span></p>
+    <script>
+        const hexadecimal_characters = "ABCDEF1234567890"
+        const hexadecimal_characters_array = Array.from(hexadecimal_characters)
+        let random_color_code = "#"
+
+
+        function randomHex(hexadecimal_characters_array, random_color){
+            let farge = ""
+
+            const random = Math.floor(Math.random() * hexadecimal_characters_array.length)
+
+        
+
+
+
+            document.getElementById("random_color").innerHTML = random_color_code + hexadecimal_characters_array[random]
+        }
+
+        randomHex(hexadecimal_characters_array, "random_farge")
+
+        
+        function randomhex (a, b){
+            return Math.floor(Math.random() * b + a )
+        }
+
+       // console.log(randomhex ("hexadecimal_characters_array", "random_color_code"))
+
+    for(let teller = 0; teller <= 0; teller++){
+            
+            const random = Math.floor(Math.random() * hexadecimal_characters.length)
+            let farger = hexadecimal_characters
+            let random_color_code = farger
+
+
+            //document.getElementById("random_color").innerHTML = random_color_code[random].repeat(6)
+            
+        }
+             
+         //for( hex = 0; hex = 6; hex ++){
+           //     utskrift = random 
+            //}
+
+        //let random_color = random_color_code + hexadecimal_characters.shuffle()
+
+
+        //const random = Math.floor(Math.random() * hexadecimal_characters_array.length)
+        
+
+        
+        const random = Math.floor(Math.random() * hexadecimal_characters.length)
+
+        
+       
+            
+            console.log( a + hexadecimal_characters_array)
+            
+        //document.getElementById("random_color").innerHTML = random_color_code + hexadecimal_characters[random]
+
+            
+        
+       
+            
+            
+        
+
+
+       
+
+
+
+        
+
+        //document.getElementById("random_color").innerHTML = random_color_code + randomhex
+
+    </script>
+</body>
+</html>
