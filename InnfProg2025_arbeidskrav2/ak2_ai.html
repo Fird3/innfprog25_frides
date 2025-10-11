@@ -16,15 +16,49 @@
     <p>Finnes ordet "problemløsning" i Programmeringsord-arrayen? <span id="problemlosning_sjekk"></span></p>
     <h2>Problem 3</h2>
     <p>Gjennomsnittet av tallene i tall_array_en er <span id="avg_array_one"></span></p>
-    <p>Gjennomsnittet av tallene i tall_array_to er <span id="avg_array_one"></span></p>
+    <p>Gjennomsnittet av tallene i tall_array_to er <span id="avg_array_two"></span></p>
 
     <script>
         //PROBLEM 1
+        window.onload = function() {
+    // Generate a random number between 0 and 0xFFFFFF (16777215)
+    const randomNumber = Math.floor(Math.random() * 0xFFFFFF);
+
+    // Convert the number to a hexadecimal string and pad with zeros if necessary
+    const hexColor = "#" + randomNumber.toString(16).padStart(6, '0');
+
+    // Set the text content of the element with id="random_color" to the hex color
+    document.getElementById("random_color").textContent = hexColor;
+};
+
         
         //AI-kode for å løse problem 1 her.
 
         //PROBLEM 2
         const programming_words = ["variabel","funksjon","array","objekt","loop","betingelse","klasse","rekursjon","algoritme","kompilator"]
+       
+function checkWords() {
+  const wordsToCheck = {
+    "betingelse": "betingelse_sjekk",
+    "algoritme": "algoritme_sjekk",
+    "problemløsning": "problemlosning_sjekk"
+  };
+
+  // Loop through the words we need to check
+  for (let word in wordsToCheck) {
+    // Get the corresponding element ID for the word
+    const elementId = wordsToCheck[word];
+    // Check if the word is in the array
+    const isPresent = programming_words.includes(word);
+    // Get the element by ID and update its text content
+    document.getElementById(elementId).textContent = isPresent ? "Ja" : "Nei";
+  }
+}
+
+// Call the function to perform the check
+checkWords();
+
+        
 
         //AI-kode for å løse problem 2 her.
 
@@ -32,7 +66,25 @@
         const tall_array_en = [9, 13, 5, 62, 11, 6, 28, 31, 17]
         const tall_array_to = [23, 76, 88, 13, 56, 90, 42]
 
+        
+
         //AI-kode for å løse problem 3 her.
+
+        
+        // Function to calculate the average
+        function calculateAverage(arr) {
+            // Sum the array elements using reduce and then divide by the length of the array
+            const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+            return sum / arr.length;
+        }
+
+        // Calculate averages for both arrays
+        const avgOne = calculateAverage(tall_array_en);
+        const avgTwo = calculateAverage(tall_array_to);
+
+        // Display the results in HTML under the respective IDs
+        document.getElementById('avg_array_one').textContent = avgOne.toFixed(2); // Rounded to 2 decimal places
+        document.getElementById('avg_array_two').textContent = avgTwo.toFixed(2); // Rounded to 2 decimal places
     </script>
 </body>
 </html>
