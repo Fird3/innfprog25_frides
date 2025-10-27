@@ -31,7 +31,7 @@
         </nav>
     </header>
     <main>
-        
+        <canvas id="anim-area"></canvas>
         <section id="notebook">
             <div id="notebook-page">
                 
@@ -74,13 +74,22 @@
         </section>
     </main>
     <script>
+    
+        const canvas = document.getElementById("anim-area")
+        const ctx = canvas.getContext("2d")
+
+        canvas.width = 800
+        canvas.height = 600
+
         //PREPARE GAME CONFIG AND VARIABLES
         //TODO: config
         const gameConfig = {
             playerName: "Jostein",
             energy: 10,
             points: 4000,
-            duration: 30
+            duration: 30,
+            gamePaused: false,
+            gamePausedText: "Press P to pause"
         }
 
         console.log(gameConfig)
@@ -113,6 +122,7 @@
             document.getElementById("functions").innerHTML = notebook.functions
             document.getElementById("arrays").innerHTML = notebook.arrays
         }
+
 
         updateStaticUI()
 
@@ -166,6 +176,37 @@
         updateConfigValue("energy", -3)
         updateConfigValue("duration", 100)
         updateConfigValue("loops", 1000)
+
+        let fortranLoaded = false
+        let fortranImage = new Image ()
+        fortranImage.src = "icons/fortran.png"
+        fortranImage.onload = () => {fortranLoaded = true}
+        
+        
+
+           const fortran = {
+            speed: 5,
+            x: canvas.width / 2,
+            y: canvas.height / 2
+        }
+       
+        ctx.beginPath()
+        ctx.fillStyle = "#ffffff"
+        ctx.fillRect(640, 560, 150 , 30)
+        ctx.fillStyle = "#3c429b"
+        ctx.font = "15px Arial"
+        ctx.fillText(gameConfig.gamePausedText, 660, 580)
+        ctx.closePath()
+
+        if(fortranLoaded === true){
+                ctx.drawImage(fortranImage, fortran.x, fortran.y)
+             }
+        
+        
+        
+        
+       
+
 
     </script>
 </body>
