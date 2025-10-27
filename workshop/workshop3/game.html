@@ -198,9 +198,15 @@
         ctx.fillText(gameConfig.gamePausedText, 660, 580)
         ctx.closePath()
 
-        if(fortranLoaded === true){
+        function drawElements(){
+            console.log("requestAnimationFrame kjører")
+            if(fortranLoaded === true){
                 ctx.drawImage(fortranImage, fortran.x, fortran.y)
              }
+             requestAnimationFrame(drawElements)
+        }
+        drawElements()
+
         
         
         
@@ -210,4 +216,4 @@
 
     </script>
 </body>
-</html>
+</html
