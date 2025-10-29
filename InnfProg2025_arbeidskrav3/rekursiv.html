@@ -27,9 +27,17 @@
             https://www.programiz.com/javascript/recursion
         */
 
-        function numberSelector() {
-            // Din kode her
+        function numberSelector(n) {
+            if (n === 0){
+                console.log("Tallet 4 eller 7 dukket opp")
+                return
+            }
+            console.log("ikke 4 eller 7")
+            numberSelector( n + (Math.floor * 9))
         }
+        numberSelector(4 || 7)
+
+        document.getElementById("numberList"). innerHTML = numberSelector
     </script>
 </body>
 </html>
