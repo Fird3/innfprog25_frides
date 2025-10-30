@@ -10,30 +10,29 @@
         <h1>Passordgenerator</h1>
         <section>
             <form>
-                <label>
+                <label id="Lengde">
                     Lengde:
-                    <input id="Lengde" type="number" min="5" max="20">
+                    <input  type="number" min="5" max="20">
                 </label>
-                <label>
+                <label id="Uppercase">
                     Store bokstaver:
-                    <input id="BigLetters" type="checkbox">
+                    <input  type="checkbox">
                 </label>
-                <label>
+                <label id="Lowercase">
                     Små bokstaver:
-                    <input id="SmallLetters" type="checkbox">
+                    <input  type="checkbox">
                 </label>
-                <label>
+                <label  id="Tall">
                     Tall:
-                    <input id="numbers" type="checkbox">
+                    <input  type="checkbox">
                 </label>
-                <label>
+                <label  id="special">
                     Spesial tegn:
-                    <input id="special" type="checkbox">
+                    <input  type="checkbox">
                 </label>
-                <input type="submit">
+                <button id="knapp">Generer ditt passord</button>
             </form>
         </section>
-    <!-- Felter for brukervalg her -->
     </main>
 
      <p>Ditt passord: <span id="generatedPassword"></span></p>
@@ -45,7 +44,7 @@
         const symbols = "!@#$%^&*()_+-=[]{}|;:',.<>?/`~";
 
         function passwordgenerator(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
-            /* Din kode her */
+            
         }
      </script>
 </body>
