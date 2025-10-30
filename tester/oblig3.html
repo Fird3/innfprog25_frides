@@ -6,12 +6,24 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Rekursiv utskrift av tall</h1>
+    <ul id="numberList">
+        <li>Tall vil skrives ut her.</li>
+    </ul>
     <script>
-         
+         function numberSelector(n) {
+            if (n === 0){
+                document.getElementById("numberList").innerHTML = n
+                return
+            }
+            console.log(numberSelector)
+            numberSelector( n = (Math.floor(Math.random() * 9)))
+            
+            
+        }
+        numberSelector(4 || 7)
 
-        
-
-        
+        document.getElementById("numberList"). innerHTML = numberSelector(n)
 
 
 
