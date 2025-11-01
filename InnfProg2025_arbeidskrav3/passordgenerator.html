@@ -18,9 +18,9 @@
                     Store bokstaver:
                     <input  type="checkbox">
                 </label>
-                <label id="Lowercase">
+                <label>
                     Små bokstaver:
-                    <input  type="checkbox">
+                    <input id="Lowercase"  type="checkbox">
                 </label>
                 <label  id="Tall">
                     Tall:
@@ -44,8 +44,13 @@
         const symbols = "!@#$%^&*()_+-=[]{}|;:',.<>?/`~";
 
         function passwordgenerator(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
-            
+            if(document.getElementById("Lowercase").checked){
+                console.log("Hei")
+            } else {
+                console.log("Hade")
+            }
         }
+        passwordgenerator()
      </script>
 </body>
 </html>
