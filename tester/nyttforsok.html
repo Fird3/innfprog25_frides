@@ -44,29 +44,36 @@
         const symbols = "!@#$%^&*()_+-=[]{}|;:',.<>?/`~";
 
         function passwordgenerator(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
-    
-            if(document.getElementById("Lowercase").checked){
+
+            function includeLowercase(){
+                if(document.getElementById("Lowercase").checked){
                 console.log(lowercase)
             } else {
                 null
             }
+            }
+            includeLowercase()
             
-            if(document.getElementById("Uppercase").checked){
+            function includeUppercase(){
+                if(document.getElementById("Uppercase").checked){
                 console.log(uppercase)
             } else {
                 null
             }
+            }
+            includeUppercase()
+            
+        
 
         }
          
         passwordgenerator()
 
-        // document.getElementById("generatedPassword").innerHTML = passwordgenerator()
      </script>
 </body>
 </html>
 
-  let utskrift = ""
+  <!-- let utskrift = ""
           
             if(document.getElementById("Lowercase").checked){
                 console.log(lowercase)
@@ -80,5 +87,5 @@
                 //document.getElementById("generatedPassword").innerHTML = uppercase
             } else {
                 null
-            }
+            } -->
             
