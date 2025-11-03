@@ -12,7 +12,7 @@
             <form>
                 <label>
                     Lengde:
-                    <input id="length" type="number" min="5" max="20">
+                    <input id="Lengde" type="number" min="5" max="20">
                 </label>
                 <label>
                     Små bokstaver:
@@ -30,7 +30,7 @@
                     Spesial tegn:
                     <input id="special" type="checkbox">
                 </label>
-                <button>Generer ditt passord</button>
+                <button onclick="passwordgenerator()">Generer ditt passord</button>
             </form>
         </section>
     </main>
@@ -44,9 +44,41 @@
         const symbols = "!@#$%^&*()_+-=[]{}|;:',.<>?/`~";
 
         function passwordgenerator(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
-          
+    
+            if(document.getElementById("Lowercase").checked){
+                console.log(lowercase)
+            } else {
+                null
+            }
+            
+            if(document.getElementById("Uppercase").checked){
+                console.log(uppercase)
+            } else {
+                null
+            }
+
         }
+         
         passwordgenerator()
+
+        // document.getElementById("generatedPassword").innerHTML = passwordgenerator()
      </script>
 </body>
 </html>
+
+  let utskrift = ""
+          
+            if(document.getElementById("Lowercase").checked){
+                console.log(lowercase)
+                //document.getElementById("generatedPassword").innerHTML = lowercase
+            } else {
+                null
+            } 
+            
+            if(document.getElementById("Uppercase").checked){
+                console.log(uppercase)
+                //document.getElementById("generatedPassword").innerHTML = uppercase
+            } else {
+                null
+            }
+            

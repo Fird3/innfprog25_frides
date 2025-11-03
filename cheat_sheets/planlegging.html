@@ -25,7 +25,7 @@
 
         const users = [
             {
-                email: "frides@hiof.no",
+                eMail: "frides@hiof.no",
                 password: "drossap"
             }
         ]
@@ -42,7 +42,7 @@
                 const filteredUser = users.filter(user => users.email === eMail && user.password === password)
                 //IF
                 //hvis filteredUser[0] er tom skal noe skje
-                if(filteredUser.lenght <= 0){
+                if(filteredUser.length <= 0){
                     console.log("Feil e-post eller passord")
                     //hvis ikke, skal noe annet skje
                 } else {
