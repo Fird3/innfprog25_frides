@@ -28,7 +28,7 @@
                 </label>
                 <label>
                     Spesial tegn:
-                    <input id="special" type="checkbox">
+                    <input id="Symbol" type="checkbox">
                 </label>
                 <button>Generer ditt passord</button>
             </form>
@@ -44,10 +44,66 @@
         const symbols = "!@#$%^&*()_+-=[]{}|;:',.<>?/`~";
 
         function passwordgenerator(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
-            includeLowercase = false;
-            includeLowercase.checked = true;
-        
+            let utskriftU = ""
+        let utskriftL = ""
+        let utskriftN = ""
+        let utskriftS = ""
 
+        let passord = ""
+
+            function includeLowercase(){
+                if(document.getElementById("Lowercase").checked){
+                utskriftL = lowercase
+            } else {
+                null
+            }
+            }
+            includeLowercase()
+            
+            function includeUppercase(){
+                if(document.getElementById("Uppercase").checked){
+                utskriftU = uppercase
+            } else {
+                null
+            }
+            }
+            includeUppercase()
+
+            function includeNumbers(){
+                if(document.getElementById("Tall").checked){
+                utskriftN = numbers
+            } else {
+                null
+            }
+            }
+            includeNumbers()
+
+            function includeSymbols(){
+                if(document.getElementById("Symbol").checked){
+                utskriftS = symbols
+            } else {
+                null
+            }
+            }
+            includeSymbols()
+
+            function randomPassword(length){
+                let utskrift = ""
+
+            utskrift = utskriftL + utskriftU + utskriftN + utskriftS
+
+            const passLength = utskrift.length
+
+            
+            for (let pass = 0; pass <length; pass++){
+                passord += utskrift.charAt((Math.random() * passLength)) 
+            }
+
+            return passord
+
+            }
+             document.getElementById("generatedPassword").innerHTML = randomPassword(6)
+            
 
         }
         passwordgenerator()

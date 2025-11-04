@@ -28,7 +28,7 @@
                 </label>
                 <label>
                     Spesial tegn:
-                    <input id="special" type="checkbox">
+                    <input id="Symbol" type="checkbox">
                 </label>
                 <button onclick="passwordgenerator()">Generer ditt passord</button>
             </form>
@@ -47,6 +47,9 @@
 
         let utskriftU = ""
         let utskriftL = ""
+        let utskriftN = ""
+        let utskriftS = ""
+
         let passord = ""
 
             function includeLowercase(){
@@ -67,10 +70,28 @@
             }
             includeUppercase()
 
+            function includeNumbers(){
+                if(document.getElementById("Tall").checked){
+                utskriftN = numbers
+            } else {
+                null
+            }
+            }
+            includeNumbers()
+
+            function includeSymbols(){
+                if(document.getElementById("Symbol").checked){
+                utskriftS = symbols
+            } else {
+                null
+            }
+            }
+            includeSymbols()
+
             function randomPassword(length){
                 let utskrift = ""
 
-            utskrift = utskriftL + utskriftU 
+            utskrift = utskriftL + utskriftU + utskriftN + utskriftS
 
             const passLength = utskrift.length
 
@@ -83,10 +104,6 @@
 
             }
              document.getElementById("generatedPassword").innerHTML = randomPassword(6)
-
-            
-
-            // console.log(passord)
             
 
         }
