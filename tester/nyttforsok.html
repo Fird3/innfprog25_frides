@@ -45,9 +45,13 @@
 
         function passwordgenerator(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
 
+        let utskriftU = ""
+        let utskriftL = ""
+        let passord = ""
+
             function includeLowercase(){
                 if(document.getElementById("Lowercase").checked){
-                console.log(lowercase)
+                utskriftL = lowercase
             } else {
                 null
             }
@@ -56,14 +60,34 @@
             
             function includeUppercase(){
                 if(document.getElementById("Uppercase").checked){
-                console.log(uppercase)
+                utskriftU = uppercase
             } else {
                 null
             }
             }
             includeUppercase()
+
+            function randomPassword(length){
+                let utskrift = ""
+
+            utskrift = utskriftL + utskriftU 
+
+            const passLength = utskrift.length
+
             
-        
+            for (let pass = 0; pass <length; pass++){
+                passord += utskrift.charAt((Math.random() * passLength)) 
+            }
+
+            return passord
+
+            }
+             document.getElementById("generatedPassword").innerHTML = randomPassword(6)
+
+            
+
+            // console.log(passord)
+            
 
         }
          
