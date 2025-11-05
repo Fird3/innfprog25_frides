@@ -376,7 +376,7 @@
         directions.left ? fortran.x -= fortran.speed : null
         directions.right ? fortran.x += fortran.speed : null
 
-        if(fortran.x > canvas.width - (fortranImage.width / 2)|| fortran.x < 0 || fortran.y < 0 || fortran.y > canvas.height){
+        if(fortran.x > canvas.width - (fortranImage.width / 2)|| fortran.x + fortranImage.width / 2 < 0 || fortran.y + fortranImage.height / 2 < 0 || fortran.y > canvas.height - (fortranImage.height / 2)){
           fortran.x = canvas.width / 2
           fortran.y = canvas.height / 2
           gameConfig.energy--
