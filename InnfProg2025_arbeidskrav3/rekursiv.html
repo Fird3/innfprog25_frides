@@ -28,19 +28,18 @@
         */
 
         function numberSelector(n) {
-            if (n === 0){
+            if (n === 4 || n === 7){
                 console.log(n)
                 return
             }
             console.log(n)
-            numberSelector(n = (Math.floor(Math.random() * 9)))
-            // numberSelector( n = (Math.floor(Math.random() * 9)))
-            
+
+            numberSelector(n = (Math.floor(Math.random() * 9) + 1))
             
         }
-        numberSelector(7)
+        numberSelector(n = (Math.floor(Math.random() * 9) + 1))
 
-        // document.getElementById("numberList"). innerHTML = numberSelector(4, 7)
+        //document.getElementById("numberList"). innerHTML = numberSelector(4, 7)
     </script>
 </body>
 </html>
