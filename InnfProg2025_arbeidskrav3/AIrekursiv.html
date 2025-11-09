@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekursiv Talltrekking</title>
+</head>
+<body>
+    <h1>Rekursiv Talltrekking</h1>
+    <ul id="tallListe"></ul>
+    <button onclick="trekkTall()">Start Trekking</button>
+
+    <script>
+        function trekkTall(liste = []) {
+            // Trekker et tilfeldig tall mellom 1 og 9
+            const tall = Math.floor(Math.random() * 9) + 1;
+
+            // Legger tallet til i listen
+            liste.push(tall);
+            
+            // Oppdaterer HTML-listen
+            oppdaterListe(liste);
+
+            // Stopp hvis tallet er 4 eller 7
+            if (tall === 4 || tall === 7) {
+                console.log("Stopp! Treff på 4 eller 7.");
+                return;
+            }
+
+            // Kaller funksjonen på nytt (rekursjon)
+            trekkTall(liste);
+        }
+
+        // Funksjon for å oppdatere HTML-listen
+        function oppdaterListe(liste) {
+            const ul = document.getElementById("tallListe");
+            ul.innerHTML = ''; // Tømmer listen før vi legger til nye tall
+
+            // Legger til hvert tall i listen som en <li>
+            liste.forEach(tall => {
+                const li = document.createElement("li");
+                li.textContent = tall;
+                ul.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

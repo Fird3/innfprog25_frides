@@ -31,17 +31,16 @@
             
             if (n === 4 || n === 7){
                 console.log(n)
+                utskrift += `<li>${n}</li>`
                 return
             }
             console.log(n)
-            
+            utskrift += `<li>${n}</li>`
             numberSelector(n = (Math.floor(Math.random() * 9) + 1))
         }
         numberSelector(n = (Math.floor(Math.random() * 9) + 1))
 
-        utskrift = `<li>${n}</li>` 
-
-        utskrift
+        // utskrift = `<li>${n}</li>`
 
         document.getElementById("numberList").innerHTML = utskrift
 
