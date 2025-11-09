@@ -38,9 +38,9 @@
             }
         ]
         
-        const iOSgame = games.filter((game)=> game.platforms.includes("iOS"))
+        const iOSgames = games.filter((game)=> game.platforms.includes("iOS"))
 
-        document.getElementById("filter").innerHTML = iOSgames.map((game) => `<li><${game-title}</li>`).join(``)
+        document.getElementById("filter").innerHTML = iOSgames.map((game) => `<li><${games.title}</li>`).join(``)
     </script>
 </body>
 </html>

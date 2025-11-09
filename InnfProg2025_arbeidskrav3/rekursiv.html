@@ -27,6 +27,7 @@
             https://www.programiz.com/javascript/recursion
         */
 
+        
         function numberSelector(n) {
             if (n === 4 || n === 7){
                 console.log(n)
@@ -39,7 +40,9 @@
         }
         numberSelector(n = (Math.floor(Math.random() * 9) + 1))
 
-        //document.getElementById("numberList"). innerHTML = numberSelector(4, 7)
+        const liste = `<li>${n}</li>`
+
+        document.getElementById("numberList").innerHTML = liste
     </script>
 </body>
 </html>
