@@ -113,11 +113,42 @@
 
         //WS4, oppg 5: Lager for elementer
         const items = [
-            {type: "variable", x: 100, y: 50, lifetime: 8, caught: false},
-            {type: "loop", x: 430, y: 290, lifetime: 3, caught: false},
-            {type: "bug", x: 500, y: 400, lifetime: 0, caught: false},
-            {type: "function", x: 300, y: 400, lifetime: 0, caught: false}
+            // {type: "variable", x: 100, y: 50, lifetime: 8, collected: false},
+            // {type: "loop", x: 430, y: 290, lifetime: 3, collected: false},
+            // {type: "bug", x: 500, y: 400, lifetime: 0, collected: false},
+            // {type: "function", x: 300, y: 400, lifetime: 0, collected: false}
         ]
+
+        function randomMinMax(min, max){
+            return Math.floor(Math.random() * (max - min) + min)
+        }
+       function createElements(){
+
+        const elementType = itemTypes[randomMinMax(0, itemTypes.length - 1)]
+
+        if(elementType === "bug"){
+            items.push(
+                {type: "bug", 
+                x: randomMinMax(10, canvas.width - 10), 
+                y: canvas.height + 50, 
+                lifetime: 0, 
+                collected: false}
+            )
+        } else {
+            items.push({
+                type: elementType,
+                x: randomMinMax(10, canvas.width - 10),
+                y: randomMinMax(10, canvas.height - 10),
+                lifetime: randomMinMax(5, 15),
+                collected: false
+
+            })
+        }
+        setTimeout(createElements, randomMinMax(500, 3000))
+
+        console.log(items)
+        }
+        createElements()
 
         
 
@@ -202,6 +233,7 @@
                 left = false
             }
         })
+
         //WS2, Oppg 3:
         document.getElementById("notebookToggler").addEventListener("click", function() {
             toggleVisibility("notebook")
@@ -322,6 +354,51 @@
             })*/
             //WS4, oppg 5 med .filter()
             items.filter((item) => item.lifetime > 0 || item.type === "bug").map((item, index) => {
+                if(item.type === "Bug"){
+                    item.y -= 3
+                    if(item.y < 0){
+                        items.splice()
+                    }
+
+                if(fortran.x > item.x && fortran.x < item.x + 20 && fortran.y + 20> item.y && fortran.y < item.y + 20)
+                    if(item.type === "bug" && item.collected === false){
+                        iem.collected = true
+                        items.splice(index, 1)
+                        gameConfig.energy--
+                        updateSingleStaticUI("energy", gameConfig.energy)
+                    }
+                    if(item.type === "variable" && item.collected === false){
+                        notebook.variables++
+                        item.collected = true
+                        updateSingleStaticUI("variables", notenook.variables)
+                    }
+                    if(item.type === "loop" && item.collected === false){
+                        notebook.loops++
+                        item.collected = true
+                        updateSingleStaticUI("loops", notebook.loops)
+                    }
+
+                    //med ternary operator
+                    // item.type === "function" && item.collected === false ? notebook.functions++&& item.collected = true && updateSingleStaticUI("functions", notebook.functions) : null
+
+                    if(item.type === "functions" && item.collected === false){
+                        notebook.functions++
+                        item.collected = true
+                        updateSingleStaticUI("functions", notebook.functions)
+                    }
+
+                    if(item.type === "array" && item.collected === false){
+                        notebook.arrays++
+                        updateSingleStaticUI("arrays", notebook.arrays)
+                    }
+
+                    if(item.type === "energydrink" && item.collected === false){
+                        gameConfig.energy++
+                        item.collected = true
+                        updateSingleStaticUI("energydrink", gameConfig.energy)
+                    }
+
+                }
                     drawItem(item.type, item.x, item.y, item.lifetime)
             })
 
